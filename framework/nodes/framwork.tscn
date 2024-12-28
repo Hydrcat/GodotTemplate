@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://0m8qop3uxl38"]
+
+[ext_resource type="Script" path="res://framework/nodes/framwork.gd" id="1_xpv61"]
+[ext_resource type="Script" path="res://framework/object_pool/pool_manager.gd" id="2_j7vkd"]
+[ext_resource type="Script" path="res://framework/manager/manger_base.gd" id="3_71crv"]
+
+[node name="Framwork" type="Node"]
+script = ExtResource("1_xpv61")
+
+[node name="PoolManager" type="Node" parent="."]
+script = ExtResource("2_j7vkd")
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("3_71crv")
