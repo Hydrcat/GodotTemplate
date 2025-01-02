@@ -31,3 +31,8 @@ func _enter_tree() -> void:
 	# 节点准备
 	entity = get_parent()
 	register_component(entity, self)
+
+## 组件准备好
+func _component_ready() -> void:
+	# 组件准备
+	pass

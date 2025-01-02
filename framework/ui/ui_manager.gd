@@ -1,14 +1,22 @@
+@tool
 extends ManagerBase
 class_name UIManager
 ## UI管理器
 
-var panel_dict :Dictionary # {string：Uipanel}
-var ui_root:CanvasLayer
+## 面板字典
+# key:面板名字
+# value:面板实例
+var panel_dict: Dictionary
+var ui_root: Node
+
 
 func _init() -> void:
-	panel_dict = {} # 初始化字典
+	# 初始化字典
+	panel_dict = {} 
+	# 获取根节点
 	
-func open_panel(panel:UIBasePanel) -> void:
+	
+func open_panel(panel: UIBasePanel) -> void:
 	var t := try_get(panel.name)
 	if t:
 		t.root.show()
@@ -20,10 +28,9 @@ func open_panel(panel:UIBasePanel) -> void:
 		## 在对应的面板下加到子节点
 		
 		
-
-func try_get(panel_key:String) -> UIBasePanel:
+func try_get(panel_key: String) -> UIBasePanel:
 	var temp_panel = panel_dict.get(panel_key)
 	if temp_panel:
 		return temp_panel as UIBasePanel
-	else :
+	else:
 		return null

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://0m8qop3uxl38"]
+
+[ext_resource type="Script" path="res://framework/main/hydrcat_framework.gd" id="1_qs6df"]
+[ext_resource type="Script" path="res://framework/asset/asset_manager.gd" id="2_2p3cx"]
+[ext_resource type="Script" path="res://framework/node_pool/pool_manager.gd" id="2_g684u"]
+[ext_resource type="Script" path="res://framework/asset/asset_helper.gd" id="3_hkyhd"]
+[ext_resource type="Script" path="res://framework/ui/ui_manager.gd" id="3_oqyeg"]
+
+[sub_resource type="Resource" id="Resource_j26jq"]
+script = ExtResource("3_hkyhd")
+collect_button = false
+asset_paths = Array[StringName]([&"res://test/ui_test/"])
+asset_path_dict = {}
+
+[node name="Framwork" type="Node" node_paths=PackedStringArray("ui_manager", "pool_manager")]
+script = ExtResource("1_qs6df")
+ui_manager = NodePath("UIManager")
+pool_manager = NodePath("PoolManager")
+
+[node name="AssetManager" type="Node" parent="."]
+script = ExtResource("2_2p3cx")
+asset_colllector = SubResource("Resource_j26jq")
+
+[node name="PoolManager" type="Node" parent="."]
+script = ExtResource("2_g684u")
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("3_oqyeg")

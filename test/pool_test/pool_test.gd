@@ -17,6 +17,7 @@ func spawn_bullet(position: Vector2) -> void:
 	temp.born()
 
 func _ready() -> void:
-	bullet_pool = PoolManager \
+	bullet_pool = HydrcatFramework \
+		.pool_manager \
 		.get_instance() \
 		.register_pool("bullet_pool", bullet_prefab, 10)

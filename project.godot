@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="GodotTemplate"
-run/main_scene="res://test/PoolTest/PoolTest.tscn"
+run/main_scene="res://test/pool_test/PoolTest.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Framwork="*res://framework/nodes/framwork.tscn"
+HydrcatFramework="*res://framework/main/hydrcat_framework.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+enabled=PackedStringArray()

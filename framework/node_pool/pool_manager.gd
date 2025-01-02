@@ -3,9 +3,6 @@ class_name PoolManager
 
 var pools: Dictionary = {}
 
-static func get_instance() -> PoolManager:
-	return PoolManager.instance
-
 ## 注册对象池
 func register_pool(pool_name: StringName, node_prefab: PackedScene = null,
 		defalut_node_amount: int = 10) -> NodePool:
