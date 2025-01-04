@@ -92,8 +92,9 @@ func generate_custom_code_file(file_path: String) -> void:
 ## 生成代码文件
 func generate_code_file(code: String, file_path: String) -> void:
 	Log.info("生成SignalBus:{name}",{name = file_path})
+	var reigion_end := "#endregion"
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	file.store_string(code)
+	file.store_string(code+reigion_end)
 	file.close()
 
 

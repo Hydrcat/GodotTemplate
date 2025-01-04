@@ -1,8 +1,6 @@
 extends ManagerBase
 class_name SignalBusManager
 
-@export var signal_buss:Array[SignalHelper]
-
 # 玩家自定义信号总线初始化
 func _enter_tree() -> void:
 	init()
