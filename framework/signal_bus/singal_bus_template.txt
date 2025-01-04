@@ -1,0 +1,5 @@
+extends Node
+class_name {class_name}
+
+# 这个文件是 Godot 项目中信号总线的模板。
+# 它是自动生成的，不应该手动修改。

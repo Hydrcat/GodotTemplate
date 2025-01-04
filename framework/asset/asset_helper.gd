@@ -9,38 +9,59 @@ class_name AssetHelper extends Resource
 		collect_asset()
 
 @export_category("资源路径")
-@export var asset_paths: Array[StringName]
+@export var asset_configs: Array[AssetConfig]
 @export var asset_path_dict: Dictionary
 
 
 ## 收集资源
 func collect_asset() -> void:
-	
-	for path in asset_paths:
-		find_resources_in_folder(path, "tscn")
-
+	for asset_type in asset_configs:
+		var t: Dictionary = {}
+		asset_path_dict[asset_type.name] = t
+		find_resources_in_folder(asset_type)
+		
+		
 ## 收集指定地址的资源
-func find_resources_in_folder(path: String, type: String):
-	asset_path_dict = {}
-	if path.is_empty():
-		printerr("路径为空")
-		return
+func find_resources_in_folder(asset_type: AssetConfig) -> void:
+	var asset_name = asset_type.name
 	
+	var store_dict := asset_path_dict[asset_name] as Dictionary
+	store_dict.clear()
+
+	find_file_in_folader(asset_type.path, asset_type, store_dict)
+
+## 遍历寻找文件夹中的资源
+func find_file_in_folader(path: StringName, asset_config: AssetConfig, store_dict: Dictionary) -> void:
 	var dir := DirAccess.open(path)
-	if not dir :
-		printerr("文件夹不存在:",path)
+	if not dir:
+		printerr("文件夹不存在:", path)
 		return
 
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
+
 	while file_name != "":
 		if dir.current_is_dir():
 			print("发现目录：" + file_name)
+			find_file_in_folader(dir.get_current_dir(false) + "/" + file_name, asset_config, store_dict)
+			
 		else:
 			print("发现文件：" + file_name)
-
-			# 场景
-			if file_name.match("*.tscn"):
-				asset_path_dict[file_name] = dir.get_current_dir(false)
+			
+			if file_name.match(asset_config.collect_match):
+				var base_file_name: StringName = file_name.get_basename().to_snake_case()
+				store_dict[base_file_name] = dir.get_current_dir(false) + "/" + file_name
 		file_name = dir.get_next()
+
+
+## 通过资源名来获取资源路径
+func get_asset_path(asset_type: StringName, asset_name: StringName) -> StringName:
+	if not asset_path_dict.has(asset_type):
+		printerr("资源类型不存在:", asset_type)
+		return ""
 	
+	var store_dict := asset_path_dict[asset_type] as Dictionary
+	if not store_dict.has(asset_name):
+		printerr("资源不存在:", asset_name)
+		return ""
+	return store_dict[asset_name]
