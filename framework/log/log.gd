@@ -4,13 +4,21 @@ class_name Log
 
 
 ## 提示
-static func info(msg: String) -> void:
+static func info(msg: String,args:Dictionary = {}) -> void:
+	msg = msg.format(args)
 	print_debug(msg)
 
 ## 警告
-static func warn(msg: String) -> void:
+static func warn(msg: String,args:Dictionary = {}) -> void:
+	msg = msg.format(args)
 	print_debug(msg)
 
 ## 错误
-static func error(msg: String) -> void:
+static func error(msg: String,args:Dictionary = {}) -> void:
+	msg = msg.format(args)
 	print_debug(msg)
+
+## 打印分割线
+static func split_line(str:String) -> void:
+	var msg := "=================="
+	print(msg+str+msg)

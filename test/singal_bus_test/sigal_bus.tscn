@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://32klhyfkn4po"]
+
+[ext_resource type="Script" path="res://test/singal_bus_test/sigal_bus.gd" id="1_ouk4w"]
+[ext_resource type="Script" path="res://framework/signal_bus/base/singal_helper.gd" id="2_10ptd"]
+[ext_resource type="Script" path="res://framework/signal_bus/base/singal_config.gd" id="3_0owhl"]
+[ext_resource type="Script" path="res://framework/signal_bus/base/singal_param.gd" id="4_ruqmy"]
+
+[sub_resource type="Resource" id="Resource_e2dj7"]
+script = ExtResource("3_0owhl")
+singal_name = &"tes2"
+params = Array[ExtResource("4_ruqmy")]([])
+
+[sub_resource type="Resource" id="Resource_5bqh7"]
+script = ExtResource("3_0owhl")
+singal_name = &"test2"
+params = Array[ExtResource("4_ruqmy")]([])
+
+[sub_resource type="Resource" id="Resource_0nv2t"]
+script = ExtResource("2_10ptd")
+generate_button = false
+singal_bus_name = &"Test"
+singal_configs = Array[ExtResource("3_0owhl")]([SubResource("Resource_e2dj7"), SubResource("Resource_5bqh7")])
+
+[node name="SigalBus" type="Node2D"]
+script = ExtResource("1_ouk4w")
+singal_helper = SubResource("Resource_0nv2t")

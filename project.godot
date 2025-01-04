@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-HydrcatFramework="*res://framework/main/hydrcat_framework.tscn"
+HydrcatFramework="*res://framework/hydrcat_framework.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/hydrcat.framework/plugin.cfg")

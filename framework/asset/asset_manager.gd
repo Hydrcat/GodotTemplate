@@ -20,6 +20,16 @@ func load_asset(asset_type: StringName, asset_name: StringName) -> Resource:
 		return null
 	return load(path) as Resource
 
+## 按组，加载所有资源
+func load_group_asset(asset_type: StringName) -> Array:
+	var asset_array: Array[Resource] = []
+	for path in asset_colllector.asset_path_dict[asset_type].values():
+		var asset = load(path) as Resource
+		if asset != null:
+			asset_array.append(asset)
+	return asset_array
+	
+
 ## TODO:异步加载资源
 func load_asset_async(asset_type: StringName, asset_name: StringName) -> void:
 	pass

@@ -1,11 +1,16 @@
-extends Node
+extends UIPanel
+class_name GamePanel
 
+@onready var h_box_container: HBoxContainer = $HBoxContainer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	UISignalBus.instance.add_unit_panel.connect(on_add_unit_panel)
 
+func on_add_unit_panel()->void:
+	var ps:=HydrcatFramework.asset_manager.load_asset("ui","unit_panel") as PackedScene
+	var node := ps.instantiate()
+	h_box_container.add_child(node)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_back_pressed() -> void:
+	switch_to("StartPanel")
+	
