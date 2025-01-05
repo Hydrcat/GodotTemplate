@@ -7,8 +7,8 @@ const SIGNAL_BUS_FLODER := "res://signal/gen/"
 const CUSTOM_SIGNAL_BUS_FLODER := "res://signal/"
 
 ## 文件模板
-const SIGNAL_BUS_TEMPLATE := "res://framework/signal_bus/template/singal_bus_template.txt"
-const CUSTOM_SIGNAL_BUS_TEMPLATE := "res://framework/signal_bus/template/custom_signal_bus_template.txt"
+const SIGNAL_BUS_TEMPLATE := "res://framework/manager/signal_bus/template/singal_bus_template.txt"
+const CUSTOM_SIGNAL_BUS_TEMPLATE := "res://framework/manager/signal_bus/template/custom_signal_bus_template.txt"
 
 ## 生成代码
 @export var generate_button: bool :
@@ -32,6 +32,13 @@ func gen() -> void:
 func collect_signal() -> void:
 	if not Engine.is_editor_hint():
 		return
+	Log.split_line("检查是否存在文件夹")
+	if not FileAccess.file_exists(SIGNAL_BUS_FLODER):
+		Log.info("指定文件夹不存在")
+		var dir := DirAccess.open("res://")
+		dir.make_dir(CUSTOM_SIGNAL_BUS_FLODER)
+		dir.make_dir(SIGNAL_BUS_FLODER)
+	
 	Log.split_line("收集Signal")
 	clear_folder(SIGNAL_BUS_FLODER)
 	var codes := generate_signal_code()
