@@ -1,3 +1,4 @@
+## 框架入口
 extends ManagerBase
 
 @export var asset_manager: AssetManager

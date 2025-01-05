@@ -29,3 +29,9 @@ func get_pool(pool_name: String) -> NodePool:
 		return null
 	
 	return self.pool[name]
+
+## 销毁对象池
+func unregister_pool(pool_name: StringName) -> void:
+	var pool := get_pool(pool_name)
+	
+	pass

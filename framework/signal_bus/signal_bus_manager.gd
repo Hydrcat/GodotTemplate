@@ -11,4 +11,5 @@ func init() -> void:
 	for script in scripts:
 		var s := script as GDScript
 		var signal_bus := s.new() as SignalBus
+		signal_bus.name = s.get_global_name()
 		add_child(signal_bus)

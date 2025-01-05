@@ -3,10 +3,10 @@ class_name NodePool
 
 var nodes: Array[Node] = []
 var node_components: Array[PoolNodeComponent] = []
+var node_type: String = ""
 
 var _is_initialized := false
 
-var node_type: String = ""
 
 @export var pool_size := 100
 @export var update_every_frame := true
@@ -14,11 +14,7 @@ var node_type: String = ""
 
 signal pool_initialized
 
-func _ready() -> void:
-	pool_initialized.connect(func() -> void:
-		_is_initialized = true
-		print("pool initialized")
-	)
+
 
 ## 根据指定的类型初始化对象池,并根据池子的大小初始化一定数量的pool_object
 func initialize_pool(_pool_object_prefab: PackedScene = null) -> void:
@@ -66,14 +62,6 @@ func sleep_node(node: Node) -> void:
 	var pn: PoolNodeComponent = ComponentBase.get_component(node, "PoolNodeComponent")
 	pn.sleep()
 
-func _process(delta: float) -> void:
-	for pn in node_components:
-		if pn.alive:
-			pn._update(delta)
-		
-	if update_every_frame:
-		queue_redraw()
-
 ## 申请更多的node
 func apply_more_node(amount: int) -> void:
 	for i in range(amount):
@@ -85,3 +73,17 @@ func apply_more_node(amount: int) -> void:
 		nodes.append(temp)
 		node_components.append(pn)
 	pool_initialized.emit()
+
+func _ready() -> void:
+	pool_initialized.connect(func() -> void:
+		_is_initialized = true
+		print("pool initialized")
+	)
+
+func _process(delta: float) -> void:
+	for pn in node_components:
+		if pn.alive:
+			pn._update(delta)
+		
+	if update_every_frame:
+		queue_redraw()

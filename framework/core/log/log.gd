@@ -1,6 +1,6 @@
 extends Node
 class_name Log
-# 日志
+## 日志
 
 
 ## 提示
@@ -19,6 +19,6 @@ static func error(msg: String,args:Dictionary = {}) -> void:
 	print_debug(msg)
 
 ## 打印分割线
-static func split_line(str:String) -> void:
-	var msg := "=================="
-	print(msg+str+msg)
+static func split_line(content:String) -> void:
+	var line := "=================="
+	print(line + content + line)
