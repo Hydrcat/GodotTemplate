@@ -24,7 +24,7 @@ static func get_component(node: Node, component_type: StringName) -> ComponentBa
 static func register_component(node: Node, component: ComponentBase) -> void:
 	if node.has_meta(Utils.get_type_name(component)):
 		printerr("组件已经存在")
-		
+
 	node.set_meta(Utils.get_type_name(component), component)
 
 func _enter_tree() -> void:

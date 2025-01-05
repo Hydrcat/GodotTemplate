@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://2216mcmnp3x6"]
+
+[ext_resource type="Script" path="res://addons/luban_godot/luabn_editor.gd" id="1_540qh"]
+
+[node name="LuabnEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -923.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_540qh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="path_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "当前路径"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="res_path" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "_excel"
+placeholder_text = "res下文件路径"
+
+[node name="refresh_button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "刷新"
+
+[node name="export_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "导表"
+
+[node name="open_path_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "打开路径"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="ExcelList" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
