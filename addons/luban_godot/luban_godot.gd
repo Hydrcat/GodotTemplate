@@ -12,4 +12,4 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	# Clean-up of the plugin goes here.
-	pass
+	remove_control_from_docks(interface)

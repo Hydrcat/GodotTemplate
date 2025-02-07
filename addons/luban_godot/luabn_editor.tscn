@@ -28,28 +28,41 @@ text = "当前路径"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="res_path" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="error_label" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-text = "_excel"
-placeholder_text = "res下文件路径"
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+text = "未检查到配置文件夹"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="refresh_button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="create_button" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-text = "刷新"
+size_flags_horizontal = 3
+text = "初始化配置
+"
+
+[node name="refresh_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1.刷新列表"
 
 [node name="export_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-disabled = true
-text = "导表"
+text = "2.进行导表"
 
 [node name="open_path_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "打开路径"
+text = "3.打开配置文件夹"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "-------------------------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2

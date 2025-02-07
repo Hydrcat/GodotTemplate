@@ -1,4 +1,4 @@
-set WORKSPACE=_excel\..
+set WORKSPACE=..
 set LUBAN_TOOL=%WORKSPACE%\addons\luban_godot\LubanTool
 set LUBAN_DLL=%WORKSPACE%\addons\luban_godot\LubanTool\Luban\Luban.dll
 set CONF_ROOT=%WORKSPACE%\_excel
