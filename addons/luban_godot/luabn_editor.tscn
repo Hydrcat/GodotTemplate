@@ -29,7 +29,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="error_label" type="Label" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -39,22 +38,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="create_button" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "初始化配置
 "
 
 [node name="refresh_button" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "1.刷新列表"
 
 [node name="export_button" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "2.进行导表"
 
 [node name="open_path_button" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "3.打开配置文件夹"
 

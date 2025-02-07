@@ -20,10 +20,14 @@ var _is_initialized: bool = false:
 			refresh_button.show()
 			create_button.hide()
 			error_label.hide()
+			export_button.show()
+			open_path_button.show()
 		else:
 			refresh_button.hide()
 			create_button.show()
 			error_label.show()
+			export_button.hide()
+			open_path_button.hide()
 	
 
 var luban_tools_path := "res://addons/luban_godot/LubanTool"
@@ -62,7 +66,7 @@ func move_config_folder() -> void:
 		print("模板文件夹复制成功")
 	else:
 		printerr("模板文件夹复制失败")
-	_is_initialized = check_config_folder()
+	refresh()
 
 ## 复制文件夹
 func copy_dir(from: String, to: String) -> bool:

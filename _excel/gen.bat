@@ -14,10 +14,11 @@ dotnet %LUBAN_DLL% ^
     --conf %CONF_ROOT%\luban.conf ^
     -x outputCodeDir=%GEN_DIR%\_raw_gen ^
     -x outputDataDir=%GEN_DIR%\json ^
-    -x tableImporter.name=default
-    -x pathValidator.rootDir=%SRC% && (
-        mkdir "%GEN_DIR%\gen"
-        python %POSTPROCESS% "%GEN_DIR%\_raw_gen\schema.gd" "%GEN_DIR%\gen"
-    ) && echo "ignore this">"%GEN_DIR%\_raw_gen\".gdignore
+    -x tableImporter.name=default ^
+    -x pathValidator.rootDir=%SRC%
 
-    pause
+mkdir "%GEN_DIR%\gen"
+python %POSTPROCESS% "%GEN_DIR%\_raw_gen\schema.gd" "%GEN_DIR%\gen"
+echo "ignore this">"%GEN_DIR%\_raw_gen\".gdignore
+
+pause

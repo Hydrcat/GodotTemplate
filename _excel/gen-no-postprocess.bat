@@ -14,5 +14,8 @@ dotnet %LUBAN_DLL% ^
     --conf %CONF_ROOT%\luban.conf ^
     -x outputCodeDir=%GEN_DIR%\_raw_gen ^
     -x outputDataDir=%GEN_DIR%\json ^
-    -x pathValidator.rootDir=%SRC% 
-    pause
+    -x tableImporter.name=default ^
+    -x pathValidator.rootDir=%SRC%
+
+
+pause

@@ -4,7 +4,7 @@ import sys
 import shutil
 
 ##----------需要额外配置-------------##
-module_name = ["Game","Data"]
+exclude_class = ["Vector2","Vector3","Vector4"]
 
 
 # 检查是否提供了输入文件路径和输出目录
@@ -19,9 +19,9 @@ output_dir = sys.argv[2]
 
 # 帮助函数
 def is_tables(class_name):
-    for m in module_name:
-        if class_name.startswith(m+"Tb"):
-            return True
+    # 检查类名是否以 "Tb"+任意大写字母 开头
+    if re.match(r"Tb[A-Z]", class_name):
+        return True
     return False
 
 # 清空文件夹
@@ -47,6 +47,10 @@ def clear_folder(folder_path):
 
 # 辅助函数：写入文件
 def write_to_file(class_name, content, extends):
+    # 排除不需要生成的类
+    if class_name in exclude_class:
+        return
+    
     file_name = f"{class_name}.gd"
     if class_name.startswith("CfgTables"):
         dir_path = output_dir
