@@ -1,4 +1,4 @@
-set WORKSPACE=..
+set WORKSPACE=.
 set LUBAN_TOOL=%WORKSPACE%\addons\luban_godot\LubanTool
 set LUBAN_DLL=%WORKSPACE%\addons\luban_godot\LubanTool\Luban\Luban.dll
 set CONF_ROOT=%WORKSPACE%\_excel
@@ -14,9 +14,10 @@ dotnet %LUBAN_DLL% ^
     --conf %CONF_ROOT%\luban.conf ^
     -x outputCodeDir=%GEN_DIR%\_raw_gen ^
     -x outputDataDir=%GEN_DIR%\json ^
+    -x tableImporter.name=default
     -x pathValidator.rootDir=%SRC% && (
         mkdir "%GEN_DIR%\gen"
         python %POSTPROCESS% "%GEN_DIR%\_raw_gen\schema.gd" "%GEN_DIR%\gen"
     ) && echo "ignore this">"%GEN_DIR%\_raw_gen\".gdignore
 
-pause
+    pause
