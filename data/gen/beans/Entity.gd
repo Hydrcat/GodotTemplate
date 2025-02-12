@@ -35,5 +35,3 @@ func _init(_json_) -> void:
     self.card_pile_id = _json_["card_pile_id"]
 
 
-
-

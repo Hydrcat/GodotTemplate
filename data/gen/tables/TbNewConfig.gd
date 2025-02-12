@@ -5,25 +5,26 @@
 #  </auto-generated>
 
 extends RefCounted
-class_name TbEntity
+class_name TbNewConfig
 
-var _data_list: Array[Entity]
+var _data_list: Array[NewConfig]
 var _data_map: Dictionary
 
 func _init(_json_) -> void:
     for _json2_ in _json_:
-        var _v: Entity
-        _v = Entity.new(_json2_)
+        var _v: NewConfig
+        _v = NewConfig.new(_json2_)
         self._data_list.append(_v)
         self._data_map[_v.id] = _v
 
-func get_data_list() -> Array[Entity]:
+func get_data_list() -> Array[NewConfig]:
     return self._data_list
 
 func get_data_map() -> Dictionary:
     return self._data_map
 
-func get_item(key) -> Entity:
+func get_item(key) -> NewConfig:
     return self._data_map.get(key)
+
 
 
