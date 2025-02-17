@@ -6,14 +6,14 @@
 
 ## 1.LubanEditor
 
-![alt text](image-1.png)
+![alt text](.readme/image-1.png)
 
 ### 配置及使用
 > 该插件需要python3环境
 
 第一次使用时点击`初始化配置`，编辑器将复制`res://addons/luban_godot/template_folder`下的文件到`res://_excel`下进行初始化。
 
-![alt text](image-2.png)
+![alt text](.readme/image-2.png)
 
 ### 特性
 - 目标代码生成为独立的gd文件
@@ -26,7 +26,7 @@
 
 找到框架入口`res://framework/hydrcat_framework.tscn` 进行配置
 
-![alt text](image-3.png)
+![alt text](.readme/image-3.png)
 
 然后就可以在脚本中使用类似如下脚本加载资源
 ```
@@ -41,7 +41,7 @@ var icon : Texture = res
 godot中常常使用一个单例管理游戏中的各个信号，然而将所有的信号都放在一个单例中显然是不合理的。
 基于此，设计了一个没卵用的生成信号总线的工具
 
-![alt text](image-4.png)
+![alt text](.readme/image-4.png)
 
 比较有意思的是，SignalBus 的继承关系为
 > SignalBus <- SignalBusCustom <- ManagerBase
@@ -77,5 +77,5 @@ extend UIPanel
 open_panel("PanelName")
 
 ```
-![alt text](image-5.png)
+![alt text](.readme/image-5.png)
 
