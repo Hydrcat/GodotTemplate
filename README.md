@@ -77,5 +77,5 @@ extend UIPanel
 open_panel("PanelName")
 
 ```
-
+![alt text](image-5.png)
 
