@@ -4,6 +4,7 @@
 
 [node name="UnitPanel" type="PanelContainer"]
 script = ExtResource("1_2tvce")
+parent_panel = &"GamePanel"
 parent_node_path = &"HBoxContainer"
 
 [node name="Button" type="Button" parent="."]

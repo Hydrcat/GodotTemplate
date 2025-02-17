@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="AssetHelper" load_steps=5 format=3 uid="uid://dpruroe73bfx2"]
+[gd_resource type="Resource" script_class="AssetHelper" load_steps=6 format=3 uid="uid://dpruroe73bfx2"]
 
 [ext_resource type="Script" path="res://framework/manager/asset/asset_config.gd" id="1_nbkdt"]
 [ext_resource type="Script" path="res://framework/manager/asset/asset_helper.gd" id="2_lj024"]
+[ext_resource type="Resource" uid="uid://xn1cs64puyf5" path="res://test/image_asset.tres" id="2_otijh"]
 
 [sub_resource type="Resource" id="Resource_cxcdo"]
 script = ExtResource("1_nbkdt")
@@ -18,8 +19,11 @@ collect_match = &"*.gd"
 [resource]
 script = ExtResource("2_lj024")
 collect_button = false
-asset_configs = Array[ExtResource("1_nbkdt")]([SubResource("Resource_cxcdo"), SubResource("Resource_noe3y")])
+asset_configs = Array[ExtResource("1_nbkdt")]([SubResource("Resource_cxcdo"), SubResource("Resource_noe3y"), ExtResource("2_otijh")])
 asset_path_dict = {
+"Image": {
+"icon": "res://test/icon.svg"
+},
 "signal_bus": {
 "game_signal_bus": "res://signal/gen/game_signal_bus.gd",
 "ui_signal_bus": "res://signal/gen/ui_signal_bus.gd"

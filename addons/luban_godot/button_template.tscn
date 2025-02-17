@@ -29,7 +29,7 @@ script = ExtResource("1_cp6n2")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
-text = "excelName"
+text = "button_template"
 text_overrun_behavior = 1
 
 [node name="delete_button" type="Button" parent="."]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://08pkpufakaac"]
 
 [ext_resource type="Script" path="res://test/pool_test/bullet.gd" id="1_ktwmr"]
-[ext_resource type="Script" path="res://test/pool_test/pool_node_component.gd" id="2_1qo5r"]
-[ext_resource type="Texture2D" uid="uid://bkmxmrp5vnbs7" path="res://icon.svg" id="2_nyxhs"]
+[ext_resource type="Script" path="res://framework/manager/node_pool/pool_node_component.gd" id="2_1qo5r"]
+[ext_resource type="Texture2D" uid="uid://bkmxmrp5vnbs7" path="res://test/icon.svg" id="2_nyxhs"]
 
 [node name="bullet" type="Node2D"]
 script = ExtResource("1_ktwmr")
