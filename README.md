@@ -62,10 +62,10 @@ var bullet : Node = bullet_pool.awake_object()
 extend PoolNodeComponent
 
 func _on_awake() -> void:
-    # 重置子弹位置，并发射子弹
+	# 重置子弹位置，并发射子弹
 
 func _on_sleep() -> void:
-    # 关闭子弹物理，隐藏子弹，冻结子弹
+	# 关闭子弹物理，隐藏子弹，冻结子弹
 ```
 ## 5. UI管理器
 `Panel`作为UI的核心，所有的UI都是Panel的嵌套。
@@ -78,4 +78,3 @@ open_panel("PanelName")
 
 ```
 ![alt text](.readme/image-5.png)
-

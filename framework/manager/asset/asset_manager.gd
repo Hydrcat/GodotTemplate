@@ -28,7 +28,10 @@ func load_group_asset(asset_type: StringName) -> Array:
 		if asset != null:
 			asset_array.append(asset)
 	return asset_array
-	
+
+## 按组，获得指定组的字典
+func get_asset_group(asset_type: StringName) -> Dictionary:
+	return asset_colllector.asset_path_dict[asset_type]
 
 ## TODO:异步加载资源
 func load_asset_async(asset_type: StringName, asset_name: StringName) -> void:

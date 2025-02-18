@@ -80,3 +80,11 @@ func get_group_asset_path(asset_type: StringName) -> Array[StringName]:
 	for k in store_dict.keys():
 		paths.append(store_dict[k])
 	return paths
+
+## 获得指定组的字典
+func get_group_dict(asset_type: StringName) -> Dictionary:
+	if not asset_path_dict.has(asset_type):
+		printerr("资源类型不存在:", asset_type)
+		return {}
+	
+	return asset_path_dict[asset_type]

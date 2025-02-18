@@ -11,9 +11,9 @@ const SIGNAL_BUS_TEMPLATE := "res://framework/manager/signal_bus/template/singal
 const CUSTOM_SIGNAL_BUS_TEMPLATE := "res://framework/manager/signal_bus/template/custom_signal_bus_template.txt"
 
 ## 生成代码
-@export var generate_button: bool :
+@export var generate_button: bool:
 	set(v):
-		if v!= generate_button:
+		if v != generate_button:
 			collect_signal()
 
 ## 代码生成
@@ -84,9 +84,9 @@ func generate_signal_code() -> String:
 ## 生成自定义信号代码
 func generate_custom_code_file(file_path: String) -> void:
 	if FileAccess.file_exists(file_path):
-		Log.info("custom_signal已存在:{name}",{"name":file_path})
+		Log.info("custom_signal已存在:{name}", {"name": file_path})
 		return
-	Log.info("custom_signal文件不存在,生成文件:{name}",{"name":file_path})
+	Log.info("custom_signal文件不存在,生成文件:{name}", {"name": file_path})
 
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	var signals_code = load_text_file(CUSTOM_SIGNAL_BUS_TEMPLATE)
@@ -98,10 +98,10 @@ func generate_custom_code_file(file_path: String) -> void:
 
 ## 生成代码文件
 func generate_code_file(code: String, file_path: String) -> void:
-	Log.info("生成SignalBus:{name}",{name = file_path})
+	Log.info("生成SignalBus:{name}", {name = file_path})
 	var reigion_end := "#endregion"
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	file.store_string(code+reigion_end)
+	file.store_string(code + reigion_end)
 	file.close()
 
 
