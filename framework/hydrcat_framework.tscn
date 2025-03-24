@@ -22,6 +22,9 @@ signal_bus_manager = NodePath("SignalBusManager")
 script = ExtResource("2_2p3cx")
 asset_colllector = ExtResource("3_1gm58")
 
+[node name="CfgManager" type="Node" parent="."]
+script = ExtResource("9_thpy3")
+
 [node name="SignalBusManager" type="Node" parent="."]
 script = ExtResource("5_aybhm")
 
@@ -31,6 +34,3 @@ script = ExtResource("2_g684u")
 [node name="UIManager" type="Node" parent="."]
 script = ExtResource("3_oqyeg")
 ui_signal_helper = ExtResource("7_uqdm5")
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("9_thpy3")

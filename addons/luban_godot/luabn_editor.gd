@@ -133,6 +133,8 @@ func refresh() -> void:
 				button_instance.name = file_name
 				button_instance.open_excel.connect(open_excel.bind(file_name))
 				button_instance.delete_excel.connect(delete_excel.bind(file_name))
+				if file_name.match("__*"):
+					button_instance.get_node("delete_button").disabled = true
 				excel_list.add_child(button_instance)
 
 			elif file_name.match("gen.bat"):
