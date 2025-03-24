@@ -11,23 +11,20 @@ class_name CfgTables
 const json_path:String = "res://data/json/"
 
 static var instance : CfgTables
-static var TbCard: TbCard
-static var TbCardPile: TbCardPile
-static var TbEntity: TbEntity
-static var TbNewConfig: TbNewConfig
+static var TbCardHelper: TbCard
+static var TbCardPileHelper: TbCardPile
+static var TbEntityHelper: TbEntity
 
 func loader(file_name:String):
-    var json_file = FileAccess.open(json_path + file_name + ".json", FileAccess.READ)
-    var json_text = json_file.get_as_text()
-    json_file.close()
-    return JSON.parse_string(json_text)
+	var json_file = FileAccess.open(json_path + file_name + ".json", FileAccess.READ)
+	var json_text = json_file.get_as_text()
+	json_file.close()
+	return JSON.parse_string(json_text)
 
 
 func _init() -> void:
-    assert(instance == null,"gen:不要重复初始化CfgTables")
+	assert(instance == null,"gen:不要重复初始化CfgTables")
 
-    self.TbCard = TbCard.new(loader.call('tbcard'))
-    self.TbCardPile = TbCardPile.new(loader.call('tbcardpile'))
-    self.TbEntity = TbEntity.new(loader.call('tbentity'))
-    self.TbNewConfig = TbNewConfig.new(loader.call('tbnewconfig'))
-
+	self.TbCardHelper = TbCard.new(loader.call('tbcard'))
+	self.TbCardPileHelper = TbCardPile.new(loader.call('tbcardpile'))
+	self.TbEntityHelper = TbEntity.new(loader.call('tbentity'))

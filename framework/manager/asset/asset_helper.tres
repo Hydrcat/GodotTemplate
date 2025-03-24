@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AssetHelper" load_steps=6 format=3 uid="uid://dpruroe73bfx2"]
 
-[ext_resource type="Script" path="res://framework/manager/asset/asset_config.gd" id="1_nbkdt"]
-[ext_resource type="Script" path="res://framework/manager/asset/asset_helper.gd" id="2_lj024"]
+[ext_resource type="Script" uid="uid://mf3jtgemgm5n" path="res://framework/manager/asset/asset_config.gd" id="1_nbkdt"]
+[ext_resource type="Script" uid="uid://wvuunnw7d165" path="res://framework/manager/asset/asset_helper.gd" id="2_lj024"]
 [ext_resource type="Resource" uid="uid://xn1cs64puyf5" path="res://test/image_asset.tres" id="2_otijh"]
 
 [sub_resource type="Resource" id="Resource_cxcdo"]

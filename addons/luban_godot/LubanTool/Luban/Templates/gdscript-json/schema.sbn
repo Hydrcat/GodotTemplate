@@ -172,7 +172,7 @@ class {{str_full_name __full_name}}:
     {{~if table.comment != ''~}}
     ## {{table.comment | html.escape}}
     {{~end~}}
-    static var {{format_method_name __code_style table.name}}: {{full_name table}}
+    static var {{format_field_name __code_style table.name}}Helper: {{full_name table}}
     {{~end~}}
 
     func loader(file_name:String):
@@ -186,5 +186,5 @@ class {{str_full_name __full_name}}:
         assert(instance == null,"gen:不要重复初始化CfgTables")
 
         {{~for table in __tables ~}}
-        self.{{format_method_name __code_style table.name}} = {{full_name table}}.new(loader.call('{{table.output_data_file}}'))
+        self.{{format_field_name __code_style table.name}}Helper = {{full_name table}}.new(loader.call('{{table.output_data_file}}'))
         {{~end~}}

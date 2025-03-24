@@ -16,7 +16,7 @@
   {
     "id": 1002,
     "sname": "防御",
-    "desc": "对自身施加{3}点防御值",
+    "desc": "对自身施加3}点防御值",
     "type": 2,
     "cost": 1,
     "target_select_type": 1,

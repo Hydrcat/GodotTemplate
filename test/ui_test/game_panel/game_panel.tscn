@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxytrpcqxiofr"]
 
-[ext_resource type="Script" path="res://test/ui_test/game_panel/game_panel.gd" id="1_y5f0q"]
+[ext_resource type="Script" uid="uid://cip17v6ifq6fv" path="res://test/ui_test/game_panel/game_panel.gd" id="1_y5f0q"]
 [ext_resource type="PackedScene" uid="uid://bg7djdsljbq0t" path="res://test/ui_test/game_panel/unit_panel/unit_panel.tscn" id="2_1x50p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hl4e"]

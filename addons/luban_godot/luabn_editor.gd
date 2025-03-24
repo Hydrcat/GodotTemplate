@@ -181,8 +181,6 @@ func export() -> void:
 	var output = []
 	
 	OS.create_process("powershell.exe", [bat_path], true)
-	# better_print_debug(output)
-	save_log(output)
 
 func better_print_debug(words: PackedStringArray) -> void:
 	var sort_words: PackedStringArray = []
@@ -193,14 +191,6 @@ func better_print_debug(words: PackedStringArray) -> void:
 	for word in sort_words:
 		print_debug(word)
 
-func save_log(log: String) -> void:
-	var file := FileAccess.open(excel_folder + "/log.txt", FileAccess.WRITE)
-	if file == null:
-		printerr("文件打开失败")
-		return
-	file.store_string(log)
-	file.close()
-	print("日志已保存")
 
 func add_new_excel(excel_name: String) -> void:
 	var dir := DirAccess.open(excel_folder)
