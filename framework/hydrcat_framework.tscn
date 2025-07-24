@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bqgowqirgaa6b" path="res://framework/manager/ui/ui_manager.gd" id="3_oqyeg"]
 [ext_resource type="Script" uid="uid://bisuw8dgh6nth" path="res://framework/manager/signal_bus/signal_bus_manager.gd" id="5_aybhm"]
 [ext_resource type="Resource" uid="uid://cw4ud8u4g7n26" path="res://framework/manager/ui/ui_signal_bus.tres" id="7_uqdm5"]
-[ext_resource type="Script" uid="uid://bt8hywcuspirr" path="res://framework/ConfigManager.gd" id="9_thpy3"]
+[ext_resource type="Script" uid="uid://bt8hywcuspirr" path="res://framework/manager/config/ConfigManager.gd" id="9_thpy3"]
 
 [node name="Framwork" type="Node" node_paths=PackedStringArray("asset_manager", "ui_manager", "pool_manager", "signal_bus_manager")]
 script = ExtResource("1_qs6df")
