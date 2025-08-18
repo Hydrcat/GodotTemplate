@@ -22,3 +22,4 @@ static func error(msg: String,args:Dictionary = {}) -> void:
 static func split_line(content:String) -> void:
 	var line := "=================="
 	print(line + content + line)
+

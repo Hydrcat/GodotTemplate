@@ -19,7 +19,8 @@ config/icon="res://icon.png"
 [autoload]
 
 HydrcatFramework="*res://framework/hydrcat_framework.tscn"
+TurnManager="*res://addons/godot_gameplay_systems/turn_based/./autoloads/turn_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_gameplay_systems/plugin.cfg", "res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")
