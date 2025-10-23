@@ -7,16 +7,13 @@
 [sub_resource type="Resource" id="Resource_cb7th"]
 script = ExtResource("2_k61ng")
 singal_name = &"game_over"
-params = Array[ExtResource("3_t7o8u")]([])
 
 [sub_resource type="Resource" id="Resource_an5av"]
 script = ExtResource("2_k61ng")
 singal_name = &"game_start"
-params = Array[ExtResource("3_t7o8u")]([])
 
 [resource]
 script = ExtResource("1_3xar6")
-generate_button = false
 signal_bus_name = &"GameSignalBus"
 signal_configs = Array[ExtResource("2_k61ng")]([SubResource("Resource_cb7th"), SubResource("Resource_an5av")])
 is_enable_custom_signal = true

@@ -23,7 +23,6 @@ collect_match = &"*.svg"
 
 [resource]
 script = ExtResource("2_lj024")
-collect_button = false
 asset_configs = Array[ExtResource("1_nbkdt")]([SubResource("Resource_cxcdo"), SubResource("Resource_noe3y"), SubResource("Resource_avm3w")])
 asset_path_dict = {
 &"Image": {

@@ -9,9 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_qlufm"]
 script = ExtResource("5_rdy2l")
-gen_button = false
 
 [resource]
 script = ExtResource("2_g7hed")
 need_gens = Array[ExtResource("1_dqr7h")]([ExtResource("2_kjom4"), ExtResource("2_1xkhn"), ExtResource("4_mu0qa"), SubResource("Resource_qlufm")])
-gen_button = false
